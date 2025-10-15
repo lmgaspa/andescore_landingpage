@@ -12,7 +12,7 @@ export function Navbar() {
           alt="AndesCore"
           className="w-14 h-14 rounded-2xl"
         />
-        <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <ul className="hidden md:flex items-center gap-8 text-lx font-medium">
           <li>
             <a href="#projects" className="hover:text-yellow-400 hover:shadow-sm transition">
               Projects

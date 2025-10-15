@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-chrome-gradient text-white">
       <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-center md:text-left">
+          <div className="text-lx text-center md:text-left">
             <p className="hover:text-yellow-400 hover:shadow-sm transition">
               © {new Date().getFullYear()} AndesCore
             </p>
