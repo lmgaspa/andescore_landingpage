@@ -26,12 +26,12 @@ export function Services() {
   return (
     <section
       id="services"
-      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
+      className="mx-auto max-w-7xl bg-chrome-gradient rounded-xl border-ty text-white px-4 sm:px-6 lg:px-8 py-16"
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+      <h2 className="text-2xl md:text-3xl font-bold ">
         Services
       </h2>
-      <p className="mt-8 text-slate-600 max-w-3xl">
+      <p className="mt-8 max-w-3xl">
         We build modern digital products: scalable APIs, fast front‑ends, mobile
         apps, and cloud infrastructure with CI/CD.
       </p>
@@ -39,7 +39,7 @@ export function Services() {
         {SERVICES.map((s) => (
           <div
             key={s.title}
-            className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:bg-blue-200"
+            className="bg-white border-ty border-slate-200 rounded-2xl p-6 shadow-sm hover:bg-yellow-400 hover:shadow-sm transition"
           >
             <h3 className="font-semibold text-slate-900">{s.title}</h3>
             <p className="mt-2 text-sm text-slate-600">{s.desc}</p>

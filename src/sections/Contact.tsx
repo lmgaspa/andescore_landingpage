@@ -14,7 +14,7 @@ export function Contact() {
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <a
             href="mailto:andescoresoftware@gmail.com"
-            className="inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 hover:bg-blue-500"
+            className="inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-4 py-2 hover:bg-blue-600 hover:shadow-sm transition"
           >
             <Mail className="w-4 h-4" /> andescoresoftware@gmail.com
           </a>

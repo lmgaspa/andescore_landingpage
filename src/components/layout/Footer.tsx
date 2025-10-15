@@ -9,10 +9,10 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-center md:text-left">
-            <p className="hover:text-yellow-400">
+            <p className="hover:text-yellow-400 hover:shadow-sm transition">
               © {new Date().getFullYear()} AndesCore
             </p>
-            <p className="mt-1 hover:text-yellow-400">
+            <p className="mt-1 hover:text-yellow-400 hover:shadow-sm transition">
               Contact:{" "}
               <a
                 href="mailto:andescoresoftware@gmail.com"
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              className="hover:text-yellow-400"
+              className="hover:text-yellow-400 hover:shadow-sm transition"
               href="https://wa.me/5571994105740"
               target="_blank"
               rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export function Footer() {
               <SiWhatsapp className="w-5 h-5" />
             </a>
             <a
-              className="hover:text-yellow-400"
+              className="hover:text-yellow-400 hover:shadow-sm transition"
               href="https://github.com/lmgaspa"
               aria-label="GitHub"
               target="_blank"
@@ -42,7 +42,7 @@ export function Footer() {
               <SiGithub className="w-5 h-5" />
             </a>
             <a
-              className="hover:text-yellow-400"
+              className="hover:text-yellow-400 hover:shadow-sm transition"
               href="https://www.linkedin.com/in/luiz-gasparetto-tech/"
               aria-label="LinkedIn"
               target="_blank"
