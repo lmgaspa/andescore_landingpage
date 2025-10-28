@@ -28,19 +28,19 @@ function parseDescriptionWithLinks(desc: string) {
 
 export function Projects() {
   return (
-    <section id="projects" className="bg-alt-gradient border-ty mt-4">
+    <section id="projects" className="mt-4">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-white">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
           Delivered projects
         </h2>
-        <p className="mt-2 text-white">
+        <p className="mt-2 text-slate-600">
           Over 20 solutions shipped, from MVP to enterprise.
         </p>
         <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {projects.map((p) => (
             <article
               key={p.title}
-              className="rounded-2xl border-ty border-slate-200 bg-slate-50 p-5  hover:bg-blue-200 hover:shadow-sm transition"
+              className="rounded-2xl border-ty border-slate-200 bg-white p-5 hover:bg-blue-50 hover:shadow-md transition"
             >
               <h3 className="font-semibold">{p.title}</h3>
               <p className="mt-2 text-sm">{parseDescriptionWithLinks(p.desc)}</p>

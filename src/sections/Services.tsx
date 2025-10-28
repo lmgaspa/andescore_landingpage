@@ -26,12 +26,12 @@ export function Services() {
   return (
     <section
       id="services"
-      className="mx-auto max-w-7xl bg-chrome-gradient rounded-xl border-ty text-white px-4 sm:px-6 lg:px-8 py-16"
+      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
     >
-      <h2 className="text-2xl md:text-3xl font-bold ">
+      <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
         Services
       </h2>
-      <p className="mt-8 max-w-3xl">
+      <p className="mt-8 max-w-3xl text-slate-600">
         We build modern digital products: scalable APIs, fast front‑ends, mobile
         apps, and cloud infrastructure with CI/CD.
       </p>

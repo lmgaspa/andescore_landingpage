@@ -3,11 +3,11 @@
 // ──────────────────────────────────────────────────────────────────────────────
 export function CTA() {
   return (
-    <section className="bg-chrome-gradient text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-8 items-center">
+    <section className="bg-white text-slate-900">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-8 items-center border-t border-slate-200">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold">Ready to start?</h2>
-          <p className="mt-2 text-slate-300 max-w-xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Ready to start?</h2>
+          <p className="mt-2 text-slate-600 max-w-xl">
             Tell us your idea and receive a lean scope with timelines, costs and
             a plan for continuous evolution.
           </p>
@@ -15,13 +15,13 @@ export function CTA() {
         <div className="flex flex-wrap gap-3 lg:justify-end">
           <a
             href="#contact"
-            className="rounded-2xl bg-white text-slate-900 px-5 py-3 hover:bg-yellow-400 hover:shadow-sm transition"
+            className="rounded-2xl bg-slate-900 text-white px-5 py-3 hover:bg-blue-600 hover:shadow-md transition"
           >
             Request proposal
           </a>
           <a
             href="#projects"
-            className="rounded-2xl border-ty border-white/30 bg-slate-900 px-5 py-3 hover:bg-blue-600 hover:shadow-sm transition"
+            className="rounded-2xl border-ty border-slate-300 bg-white text-slate-900 px-5 py-3 hover:bg-yellow-400 hover:shadow-md transition"
           >
             See case studies
           </a>

@@ -25,7 +25,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-app-gradient text-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 text-slate-900">
       <Navbar />
       <Hero />
       <Services />
