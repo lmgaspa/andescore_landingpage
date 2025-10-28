@@ -11,7 +11,7 @@
 // Vercel Dashboard → Project Settings → Environment Variables
 // DO NOT commit .env.production to git!
 //
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-92K5L8KQF7';
 
 // Global flag to track if analytics has been loaded
 declare global {
