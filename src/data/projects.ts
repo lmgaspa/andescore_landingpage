@@ -28,8 +28,8 @@ export const projects = [
     stack: ["React", "Vite", "SPA", "Vercel"],
   },
   {
-    title: "Search You Favorite Music - Langchain with Youtube API. https://music-search-langchain.vercel.app",
-    desc: "Search for your favorite music",
+    title: "Search You Favorite Music - Langchain with Youtube API",
+    desc: "Search for your favorite music. www.music-search-langchain.vercel.app",
     stack: ["Vite", "React", "Bootstrap", "FastAPI", "Python", "Youtube API", "SPA", "Vercel", "Heroku", "Langchain"],
   },
 ] as const;
