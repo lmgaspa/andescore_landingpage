@@ -45,13 +45,18 @@ export function hasAnalyticsLoaded(): boolean {
 export function initializeAnalytics() {
   // Exit if running on server
   if (typeof window === 'undefined') {
-    console.log('[Analytics] Skipping initialization (server-side)');
+    console.log('[Analytics] Skipping initialization (ceeding-side)');
     return;
   }
 
+  // Debug: Log the GA_MEASUREMENT_ID value (para debugging)
+  console.log('[Analytics] GA_MEASUREMENT_ID:', GA_MEASUREMENT_ID);
+  
   // Exit if GA_MEASUREMENT_ID is missing (undefined or empty string)
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.trim() === '') {
-    console.warn('[Analytics] VITE_GA_MEASUREMENT_ID is not set. Check your .env.local or Vercel environment variables.');
+    console.error('[Analytics] ❌ VITE_GA_MEASUREMENT_ID is not set or empty!');
+    console.error('[Analytics] Current import.meta.env.VITE_GA_MEASUREMENT_ID:', import.meta.env.VITE_GA_MEASUREMENT_ID);
+    console.error('[Analytics] ALL env vars:', import.meta.env);
     return;
   }
 
