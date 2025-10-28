@@ -1,40 +1,85 @@
 // ──────────────────────────────────────────────────────────────────────────────
 // File: src/components/ui/CookieBanner.tsx
 // ──────────────────────────────────────────────────────────────────────────────
+
 import { useState, useEffect } from "react";
 import { initializeAnalytics } from "../../utils/analytics";
 
-export function CookieBanner() {
+interface CookieBannerProps {
+  forceOpen?: boolean;
+  onClose?: () => void;
+}
+
+/**
+ * CookieBanner Component
+ * 
+ * Displays a GDPR/LGPD compliant cookie consent banner.
+ * 
+ * Features:
+ * - Shows automatically on first visit (no cookieConsent in localStorage)
+ * - Can be reopened via CookiePreferencesButton
+ * - Initializes Google Analytics only if user accepts
+ * - Stores consent in localStorage for persistence
+ * - Complies with LGPD (Brazil) and GDPR (EU) requirements
+ * 
+ * @param forceOpen - If true, force the banner to show (for reopening preferences)
+ * @param onClose - Callback when banner is closed (for external state management)
+ */
+export function CookieBanner({ forceOpen = false, onClose }: CookieBannerProps) {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
     // Check if user has already made a choice
     const cookieConsent = localStorage.getItem("cookieConsent");
-    if (!cookieConsent) {
+    
+    if (forceOpen) {
+      // Force open the banner when reopening preferences
+      setShowBanner(true);
+    } else if (!cookieConsent) {
+      // First visit - show banner
       setShowBanner(true);
     } else if (cookieConsent === 'accepted') {
-      // Initialize analytics if user previously accepted
+      // User previously accepted - initialize analytics
+      setShowBanner(false);
       initializeAnalytics();
+    } else {
+      // User previously rejected - don't show banner or analytics
+      setShowBanner(false);
     }
-  }, []);
+  }, [forceOpen]);
+
+  const handleClose = () => {
+    setShowBanner(false);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   const handleAccept = () => {
+    // Save acceptance in localStorage
     localStorage.setItem("cookieConsent", "accepted");
-    setShowBanner(false);
-    // Initialize analytics when user accepts
+    
+    // Close banner
+    handleClose();
+    
+    // Initialize Google Analytics with user's consent
     initializeAnalytics();
   };
 
   const handleReject = () => {
+    // Save rejection in localStorage
     localStorage.setItem("cookieConsent", "rejected");
-    setShowBanner(false);
-    // Analytics should not be initialized if rejected
+    
+    // Close banner
+    handleClose();
+    
+    // DO NOT initialize analytics - user rejected tracking
   };
 
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-slate-900 text-white border-t border-white/10 shadow-lg">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-slate-900 text-white border-t border-white/10 shadow-lg animate-in slide-in-from-bottom duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm md:text-base text-center md:text-left">
@@ -61,4 +106,3 @@ export function CookieBanner() {
     </div>
   );
 }
-

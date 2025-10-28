@@ -27,4 +27,9 @@ export const projects = [
     desc: "Radiology specialized services website. www.digitalrad.net.br",
     stack: ["React", "Vite", "SPA", "Vercel"],
   },
+  {
+    title: "Search You Favorite Music - Langchain with Youtube API",
+    desc: "Search for your favorite music",
+    stack: ["Vite", "React", "Bootstrap", "FastAPI", "Python", "Youtube API", "SPA", "Vercel", "Heroku", "Langchain"],
+  },
 ] as const;
