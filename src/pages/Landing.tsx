@@ -9,6 +9,7 @@ import { Stack } from "../sections/Stack";
 import { CTA } from "../sections/CTA";
 import { Contact } from "../sections/Contact";
 import { Footer } from "../components/layout/Footer";
+import { CookieBanner } from "../components/ui/CookieBanner";
 
 export default function LandingPage() {
   return (
@@ -21,6 +22,7 @@ export default function LandingPage() {
       <CTA />
       <Contact />
       <Footer />
+      <CookieBanner />
     </div>
   );
 }
