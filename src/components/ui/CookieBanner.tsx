@@ -32,16 +32,12 @@ export function CookieBanner({ forceOpen = false, onClose }: CookieBannerProps) 
     // Check if user has already made a choice
     const cookieConsent = localStorage.getItem("cookieConsent");
     
-    if (forceOpenyla) {
+    if (forceOpen) {
       // Force open the banner when reopening preferences
       setShowBanner(true);
     } else if (!cookieConsent) {
       // First visit - show banner
       setShowBanner(true);
-      // Auto-accept and initialize analytics on first visit
-      localStorage.setItem("cookieConsent", "accepted");
-      initializeAnalytics();
-      setShowBanner(false);
     } else if (cookieConsent === 'accepted') {
       // User previously accepted - initialize analytics
       setShowBanner(false);
