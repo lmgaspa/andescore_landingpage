@@ -3,7 +3,6 @@
 // ──────────────────────────────────────────────────────────────────────────────
 
 import { useState, useEffect } from "react";
-import { initializeAnalytics } from "../../utils/analytics";
 
 interface CookieBannerProps {
   forceOpen?: boolean;
@@ -39,9 +38,8 @@ export function CookieBanner({ forceOpen = false, onClose }: CookieBannerProps) 
       // First visit - show banner
       setShowBanner(true);
     } else if (cookieConsent === 'accepted') {
-      // User previously accepted - initialize analytics
+      // User previously accepted - analytics already loaded from HTML
       setShowBanner(false);
-      initializeAnalytics();
     } else {
       // User previously rejected - don't show banner or analytics
       setShowBanner(false);
@@ -62,8 +60,8 @@ export function CookieBanner({ forceOpen = false, onClose }: CookieBannerProps) 
     // Close banner
     handleClose();
     
-    // Initialize Google Analytics with user's consent
-    initializeAnalytics();
+    // Analytics already loaded from HTML - no need to initialize
+    console.log('[Analytics] Cookie consent accepted, tracking enabled');
   };
 
   const handleReject = () => {
