@@ -45,7 +45,7 @@ export function hasAnalyticsLoaded(): boolean {
 export function initializeAnalytics() {
   // Exit if running on server
   if (typeof window === 'undefined') {
-    console.log('[Analytics] Skipping initialization (ceeding-side)');
+    console.log('[Analytics] Skipping initialization (server-side)');
     return;
   }
 
