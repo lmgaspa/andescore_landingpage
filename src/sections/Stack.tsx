@@ -108,7 +108,7 @@ export function Stack() {
   ];
 
   return (
-    <section id="stack" className="mx-auto max-w-6xl px-4 py-12">
+    <section id="stack" className="mx-auto max-w-6xl px-4 py-12 bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl my-4">
       <h2 className="text-2xl md:text-3xl font-bold">Stack by categories</h2>
       <p className="mt-2 text-slate-600">
         Key technologies and providers we use daily.

@@ -28,7 +28,7 @@ function parseDescriptionWithLinks(desc: string) {
 
 export function Projects() {
   return (
-    <section id="projects" className="mt-4">
+    <section id="projects" className="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
           Delivered projects

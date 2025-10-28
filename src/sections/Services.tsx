@@ -26,7 +26,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
+      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl my-4"
     >
       <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
         Services

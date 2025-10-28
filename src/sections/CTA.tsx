@@ -3,8 +3,8 @@
 // ──────────────────────────────────────────────────────────────────────────────
 export function CTA() {
   return (
-    <section className="bg-white text-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-8 items-center border-t border-slate-200">
+    <section className="bg-gradient-to-r from-orange-50 to-yellow-50 text-slate-900 rounded-2xl my-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-8 items-center">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Ready to start?</h2>
           <p className="mt-2 text-slate-600 max-w-xl">
