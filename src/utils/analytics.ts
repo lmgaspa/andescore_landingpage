@@ -3,7 +3,7 @@
 // ──────────────────────────────────────────────────────────────────────────────
 
 // Get Google Analytics ID from environment variable
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 export function initializeAnalytics() {
   if (typeof window === 'undefined') return;
