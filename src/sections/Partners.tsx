@@ -16,7 +16,7 @@ export function Partners() {
           <img
             src="/occult77.jpg"
             alt="Occult Astro 77"
-            className="mx-auto rounded-lg shadow-md max-w-md w-full h-auto object-cover"
+            className="mx-auto rounded-lg shadow-md w-full h-64 object-cover"
           />
         </div>
         <div className="text-center">
@@ -26,7 +26,7 @@ export function Partners() {
           <img
             src="/digital.webp"
             alt="Digital Rad"
-            className="mx-auto rounded-lg shadow-md max-w-md w-full h-auto object-cover"
+            className="mx-auto rounded-lg shadow-md w-full h-64 object-cover"
           />
         </div>
         <div className="text-center">
@@ -36,7 +36,7 @@ export function Partners() {
           <img
             src="/socio.webp"
             alt="Sócio Estatística"
-            className="mx-auto rounded-lg shadow-md max-w-md w-full h-auto object-cover"
+            className="mx-auto rounded-lg shadow-md w-full h-64 object-cover"
           />
         </div>
       </div>

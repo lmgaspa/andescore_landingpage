@@ -32,4 +32,9 @@ export const projects = [
     desc: "Search for your favorite music. www.music-search-langchain.vercel.app",
     stack: ["Vite", "React", "Bootstrap", "FastAPI", "Python", "Youtube API", "SPA", "Vercel", "Heroku", "Langchain"],
   },
+  {
+    title: "Diana I Ching",
+    desc: "Play I Ching with 64 hexagrams of a Cat. https://diana-i-ching-flutter.vercel.app/",
+    stack: ["Flutter", "Dart", "Vercel"],
+  },
 ] as const;
