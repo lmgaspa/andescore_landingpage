@@ -13,31 +13,37 @@ export function Partners() {
           <h3 className="text-xl font-semibold text-slate-900 mb-4">
             Occult Astro 77
           </h3>
-          <img
-            src="/occult77.jpg"
-            alt="Occult Astro 77"
-            className="mx-auto rounded-lg shadow-md w-full h-64 object-cover"
-          />
+          <div className="w-full h-64 rounded-lg shadow-md overflow-hidden bg-white">
+            <img
+              src="/occult77.jpg"
+              alt="Occult Astro 77"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
         <div className="text-center">
           <h3 className="text-xl font-semibold text-slate-900 mb-4">
             Digital Rad
           </h3>
-          <img
-            src="/digital.webp"
-            alt="Digital Rad"
-            className="mx-auto rounded-lg shadow-md w-full h-64 object-cover"
-          />
+          <div className="w-full h-64 rounded-lg shadow-md overflow-hidden bg-white">
+            <img
+              src="/digital.webp"
+              alt="Digital Rad"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
         <div className="text-center">
           <h3 className="text-xl font-semibold text-slate-900 mb-4">
             Sócio Estatística
           </h3>
-          <img
-            src="/socio.webp"
-            alt="Sócio Estatística"
-            className="mx-auto rounded-lg shadow-md w-full h-64 object-cover"
-          />
+          <div className="w-full h-64 rounded-lg shadow-md overflow-hidden bg-white">
+            <img
+              src="/socio.webp"
+              alt="Sócio Estatística"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>

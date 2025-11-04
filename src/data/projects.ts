@@ -34,7 +34,7 @@ export const projects = [
   },
   {
     title: "Diana I Ching",
-    desc: "Play I Ching with 64 hexagrams of a Cat. https://diana-i-ching-flutter.vercel.app/",
+    desc: "Play I Ching with 64 hexagrams of a Cat. www.diana-i-ching-flutter.vercel.app",
     stack: ["Flutter", "Dart", "Vercel"],
   },
 ] as const;
