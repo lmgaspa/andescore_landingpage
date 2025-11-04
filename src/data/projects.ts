@@ -18,6 +18,11 @@ export const projects = [
     stack: ["Next.js", "Tailwind", "TypeScript", "Django", "Python", "Spring", "Kotlin(Java 24)", "Maven", "Node.js", "Express", "JavaScript", "MongoDB", "Heroku", "Vercel", "Login/Register", "Wallet Address", "Swagger", "G4", "Google Analytics", "Fullstack"],
   },
   {
+    title: "Diana Wallet",
+    desc: "A Solana Wallet created in React Native. Disponible in play store. Diana Wallet",
+    stack: ["React Native", "Web3"],
+  },
+  {
     title: "Sócio Estatística ",
     desc: "Brazilian political research company. www.socioestatistica.com.br/",
     stack: ["Vue", "Vite", "Tailwind", "TypeScript",  "SPA", "Vercel"],
