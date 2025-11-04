@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     title: "Diana Wallet",
-    desc: "A Solana Wallet created in React Native. Disponible in play store. Diana Wallet",
+    desc: "A Solana Wallet created in React Native. Disponible in Play Store for Android, name Diana Wallet",
     stack: ["React Native", "Web3"],
   },
   {
