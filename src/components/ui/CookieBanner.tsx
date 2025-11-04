@@ -30,7 +30,7 @@ export function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-20 left-0 right-0 z-50 p-4 bg-slate-900 text-white border-t border-white/10 shadow-lg animate-in slide-in-from-bottom duration-300">
+    <div className="fixed bottom-4 left-0 right-0 z-50 p-4 bg-slate-900 text-white border-t border-white/10 shadow-lg animate-in slide-in-from-bottom duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="text-sm md:text-base text-center">
           We use cookies to improve your experience and analytics in accordance with the laws{" "}
