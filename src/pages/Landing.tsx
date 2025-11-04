@@ -6,6 +6,7 @@ import { Hero } from "../sections/Hero";
 import { Services } from "../sections/Services";
 import { Projects } from "../sections/Projects";
 import { Stack } from "../sections/Stack";
+import { Partners } from "../sections/Partners";
 import { CTA } from "../sections/CTA";
 import { Contact } from "../sections/Contact";
 import { Footer } from "../components/layout/Footer";
@@ -19,6 +20,7 @@ export default function LandingPage() {
       <Services />
       <Projects />
       <Stack />
+      <Partners />
       <CTA />
       <Contact />
       <Footer />
