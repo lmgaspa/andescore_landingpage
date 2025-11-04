@@ -30,17 +30,27 @@ export function hasAnalyticsLoaded(): boolean {
 }
 
 /**
+ * Check if user has consented to cookies
+ * @returns true if user has explicitly accepted cookies
+ */
+export function hasUserConsented(): boolean {
+  if (typeof window === 'undefined') return false;
+  return localStorage.getItem('cookieConsent') === 'accepted';
+}
+
+/**
  * Initialize Google Analytics 4 (GA4)
  * 
  * This function:
- * 1. Exits early if running on server-side (SSR)
- * 2. Exits early if GA_MEASUREMENT_ID is missing
- * 3. Prevents duplicate script injection
- * 4. Injects the GA4 script dynamically
- * 5. Initializes dataLayer and gtag
+ * 1. Checks if user has consented to cookies (LGPD/GDPR requirement)
+ * 2. Exits early if running on server-side (SSR)
+ * 3. Exits early if GA_MEASUREMENT_ID is missing
+ * 4. Prevents duplicate script injection
+ * 5. Injects the GA4 script dynamically
+ * 6. Initializes dataLayer and gtag
  * 
- * Note: This function should ONLY be called after user consents to cookies
- * (LGPD/GDPR compliance requirement)
+ * IMPORTANT: This function should ONLY be called after user explicitly accepts cookies
+ * (LGPD/GDPR compliance requirement - collecting data without consent is illegal)
  */
 export function initializeAnalytics() {
   // Exit if running on server
@@ -49,7 +59,14 @@ export function initializeAnalytics() {
     return;
   }
 
-  // Debug: Log the GA_MEASUREMENT_ID value (para debugging)
+  // CRITICAL: Check consent BEFORE initializing (LGPD/GDPR compliance)
+  if (!hasUserConsented()) {
+    console.warn('[Analytics] ⚠️ User has not consented to cookies. Analytics will not initialize.');
+    console.warn('[Analytics] This is required for LGPD (Brazil) and GDPR (EU) compliance.');
+    return;
+  }
+
+  // Debug: Log the GA_MEASUREMENT_ID value
   console.log('[Analytics] GA_MEASUREMENT_ID:', GA_MEASUREMENT_ID);
   
   // Exit if GA_MEASUREMENT_ID is missing (undefined or empty string)
@@ -88,13 +105,16 @@ export function initializeAnalytics() {
         window.dataLayer.push(args);
       });
       
-      // Configure GA4
+      // Configure GA4 with consent mode
       window.gtag('js', new Date());
-      window.gtag('config', GA_MEASUREMENT_ID);
+      window.gtag('config', GA_MEASUREMENT_ID, {
+        // Explicitly set consent as granted (user already accepted)
+        anonymize_ip: false,
+      });
       
       // Mark as loaded
       window._analyticsLoaded = true;
-      console.log('[Analytics] Initialized successfully');
+      console.log('[Analytics] ✅ Initialized successfully with user consent');
     };
 
     script.onerror = () => {
