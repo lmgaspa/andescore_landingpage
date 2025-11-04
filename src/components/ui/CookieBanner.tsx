@@ -3,6 +3,7 @@
 // ──────────────────────────────────────────────────────────────────────────────
 
 import { useState, useEffect } from "react";
+import { initializeAnalytics } from "../../utils/analytics";
 
 /**
  * CookieBanner Component
@@ -17,10 +18,14 @@ export function CookieBanner() {
     const cookieConsent = localStorage.getItem("cookieConsent");
     
     if (!cookieConsent) {
-      // First visit - show banner
+      // First visit - show banner (REQUIRED for LGPD/GDPR compliance)
       setShowBanner(true);
+    } else if (cookieConsent === 'accepted') {
+      // User previously accepted - initialize analytics
+      setShowBanner(false);
+      initializeAnalytics();
     } else {
-      // User already made a choice - don't show banner
+      // User previously rejected - don't show banner and don't initialize analytics
       setShowBanner(false);
     }
   }, []);
@@ -33,6 +38,8 @@ export function CookieBanner() {
     // Save acceptance in localStorage
     localStorage.setItem("cookieConsent", "accepted");
     handleClose();
+    // Initialize analytics ONLY after user explicitly accepts
+    initializeAnalytics();
     console.log('[Analytics] Cookie consent accepted, tracking enabled');
   };
 
@@ -40,7 +47,8 @@ export function CookieBanner() {
     // Save rejection in localStorage
     localStorage.setItem("cookieConsent", "rejected");
     handleClose();
-    console.log('[Analytics] Cookie consent rejected');
+    // DO NOT initialize analytics - user rejected tracking (LGPD/GDPR compliance)
+    console.log('[Analytics] Cookie consent rejected - no tracking');
   };
 
   if (!showBanner) return null;
